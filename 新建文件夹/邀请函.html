@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>元旦晚会邀请函</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(to bottom, #ff0000, #ff9900); /* 喜庆红橙渐变 */
+            color: #fff;
+            text-align: center;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .container {
+            max-width: 90%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 40px 20px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(5px);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px #000;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin: 20px 0;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin: 15px 0;
+        }
+
+        .highlight {
+            font-size: 1.5em;
+            color: #ffff00;
+            font-weight: bold;
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 1.1em;
+        }
+
+        /* 简单雪花动画 */
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            font-size: 1.5em;
+            color: #fff;
+            animation: fall linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>喜迎2026元旦晚会</h1>
+        <h2>诚挚邀请</h2>
+        <p>尊敬的老师：</p>
+        <p>在新旧迎新之际，我们诚挚邀请您参加我们班级举办的元旦晚会，一起共享欢乐时刻，欢度美好时光！</p>
+        <p class="highlight">时间：2025年12月30日晚 20:30</p>
+        <p class="highlight">地点：博远楼308</p>
+        <p>晚会将有精彩节目表演、互动游戏和惊喜抽奖，期待您的莅临指导！</p>
+        <p class="footer">主办：网络25304班</p>
+        <p>敬候佳音，恭祝新年快乐！</p>
+    </div>
+
+    <!-- 背景音乐（可选，复制后可删除） -->
+    <audio autoplay loop>
+        <source src="Jingle-Bells(chosic.com).mp3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+    </audio>
+
+    <!-- 雪花效果脚本 -->
+    <script>
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.innerText = '❄';
+            snowflake.classList.add('snowflake');
+            snowflake.style.left = Math.random() * 100 + 'vw';
+            snowflake.style.animationDuration = Math.random() * 5 + 5 + 's';
+            snowflake.style.fontSize = Math.random() * 1 + 1 + 'em';
+            document.body.appendChild(snowflake);
+
+            setTimeout(() => {
+                snowflake.remove();
+            }, 10000);
+        }
+
+        setInterval(createSnowflake, 300);
+    </script>
+</body>
+</html>
